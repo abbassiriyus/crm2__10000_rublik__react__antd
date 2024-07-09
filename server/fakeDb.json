@@ -1,0 +1,78 @@
+{
+  "list": [
+    {
+      "id": "3"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "fio": "Степанов Степан Степанович",
+      "name": "Кредит № 6",
+      "agreementNumber": 200000003,
+      "sum": 14000,
+      "statement": null,
+      "completed": "false",
+      "date": "2021-10-05T14:48:00.000Z",
+      "fieldDetails1": "Детали 1",
+      "fieldDetails2": "Детали 2",
+      "fieldDetails3": "Детали 3"
+    },
+    {
+      "fio": "Петров Петр Петрович",
+      "name": "Кредит № 83",
+      "agreementNumber": 200000002,
+      "sum": 120340,
+      "statement": "Заявление",
+      "completed": "false",
+      "date": null,
+      "fieldDetails1": "Детали 1",
+      "fieldDetails2": "Детали 2",
+      "fieldDetails3": "Детали 3",
+      "id": "8"
+    },
+    {
+      "fio": "asd",
+      "name": "asdassddfsfsd",
+      "agreementNumber": "asdasd",
+      "sum": "sdasd",
+      "statement": "45r435",
+      "completed": "true",
+      "type": null,
+      "date": "2024-03-05T21:00:00.000Z",
+      "id": "5dc1"
+    },
+    {
+      "fio": "Test",
+      "name": "123",
+      "agreementNumber": "321",
+      "sum": "213123",
+      "completed": "true",
+      "type": "2",
+      "date": "2024-03-12T21:00:00.000Z",
+      "id": "790e"
+    }
+  ],
+  "select": [
+    {
+      "id": "1",
+      "value": "Варианта 1"
+    },
+    {
+      "id": "2",
+      "value": "Варианта 2"
+    },
+    {
+      "id": "3",
+      "value": "Варианта 3"
+    },
+    {
+      "id": "4",
+      "value": "Варианта 4"
+    }
+  ]
+}

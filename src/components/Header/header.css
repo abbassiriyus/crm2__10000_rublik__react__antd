@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 28px 16px 0;
+    background: rgba(255, 255, 255, 0.2);
+    line-height: 31px;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: bold;
+}
