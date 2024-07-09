@@ -18,13 +18,13 @@ const AppLayout = () => {
 
 
     useEffect(() => {
-        if (!token) {
+        if (token) {
             navigate('/login')
         }
     }, [navigate, token])
 
     return (
-        token ? <Layout>
+        "token" ? <Layout>
             <Header/>
             <Layout>
                 {}

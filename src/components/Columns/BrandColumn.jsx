@@ -1,4 +1,5 @@
 import InputSelect from '../InputSelect/InputSelect.jsx'
+import BaseInputColumn from './BaseInputColumn.jsx'
 
 const BrandColumn = (filters = [], editable = true) => BaseInputColumn({
   title: 'Бренд',
