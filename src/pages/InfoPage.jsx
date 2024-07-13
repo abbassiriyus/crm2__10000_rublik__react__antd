@@ -22,12 +22,12 @@ const metadata = {
 }
 
 const InfoPage = () => {
-    return (
-      <>
-        {/*В path указывается путь API для получения данных. В метада описание табов и полей*/}
-        <InfoTable path={'reference'} metadata={metadata}/>
-      </>
-    )
+  return (
+    <>
+      {/*В path указывается путь API для получения данных. В метада описание табов и полей*/}
+      <InfoTable path={'reference'} metadata={metadata} />
+    </>
+  )
 }
 
 export default InfoPage
