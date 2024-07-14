@@ -25,13 +25,13 @@ const AppLayout = () => {
 
     return (
         "token" ? <Layout>
-            <Header/>
+            <Header />
             <Layout>
-                {}
-                <Sidebar collapsed={collapsed} toggleCollapsed={toggleCollapsed}/>
+                { }
+                <Sidebar collapsed={collapsed} toggleCollapsed={toggleCollapsed} />
                 <Content style={{ margin: '0 10px', overflow: 'initial', transition: 'all 0.2s' }}>
-                    <div style={{ padding: 24, background: 'white', textAlign: 'center', marginLeft: collapsed ? 0 : 200 }}>
-                        <Outlet /> {}
+                    <div style={{ padding: 24, background: 'white', marginLeft: collapsed ? 0 : 200 }}>
+                        <Outlet /> { }
                     </div>
                 </Content>
             </Layout>

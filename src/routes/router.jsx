@@ -18,84 +18,86 @@ import AgentFLPage from '../pages/agent/AgentFLPage'
 import OtpAgentListPage from '../pages/contragent/OtpAgentListPage.jsx'
 import OtpTTListPage from '../pages/contragent/OtpTTListPage.jsx'
 import UploadClients from "../pages/administration/UploadClients.jsx";
+import TabPage from '../pages/administration/CompanyDraftListPage.jsx'
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout/>,
+        element: <Layout />,
         children: [
             {
                 index: true,
-                element: <HomePage/>,
+                path: "/",
+                element: <HomePage />,
             },
             {
                 path: '/:id',
-                element: <InfoPage/>,
+                element: <InfoPage />,
             },
             {
                 path: '/reference',
-                element: <ReferenceListPage/>,
+                element: <ReferenceListPage />,
             },
             {
                 path: '/reference/:id',
-                element: <ReferencePage/>
+                element: <ReferencePage />
             },
             {
                 path: '/potential',
-                element: <PotentialTable/>
+                element: <PotentialTable />
             },
             {
                 path: '/potential/:id',
-                element: <AddRecordPage/>
+                element: <AddRecordPage />
             },
             {
                 path: '/bank',
-                element: <BankListPage/>
+                element: <BankListPage />
             },
             {
                 path: '/bank/:id',
-                element: <BankPage/>
+                element: <BankPage />
             },
             {
                 path: '/agentyl',
-                element: <AgentYLListPage/>
+                element: <AgentYLListPage />
             },
             {
                 path: '/agentyl/:id',
-                element: <AgentYLPage/>
+                element: <AgentYLPage />
             },
             {
                 path: '/agentfl',
-                element: <AgentFLListPage/>
+                element: <AgentFLListPage />
             },
             {
                 path: '/agentfl/:id',
-                element: <AgentFLPage/>
+                element: <AgentFLPage />
             },
             {
                 path: '/company',
-                element: <CompanyDraftListPage/>
+                element: <TabPage />
             },
             {
                 path: '/reports',
-                element: <Reports/>
+                element: <Reports />
             },
             {
                 path: '/otpTTList',
-                element: <OtpTTListPage/>
+                element: <OtpTTListPage />
             },
             {
                 path: '/otpAgentList',
-                element: <OtpAgentListPage/>
+                element: <OtpAgentListPage />
             },
             {
                 path: 'uploadClients',
-                element: <UploadClients/>
+                element: <UploadClients />
             }
         ],
     },
     {
         path: '/login',
-        element: <LoginPage/>,
+        element: <LoginPage />,
     },
 ])

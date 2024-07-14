@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CalendarOutlined,SearchOutlined } from '@ant-design/icons'
+import { CalendarOutlined, SearchOutlined } from '@ant-design/icons'
 import { Button, DatePicker } from 'antd'
 import { useUpdateRowMutation } from '../../store/api/mainApi'
 import DateSelect from '../DateSelect/DateSelect'
@@ -16,8 +16,8 @@ const BaseDateColumn = ({
         value: m.id
     }))
 }) => {
-    const [ data, setData ] = useState(undefined)
-    const [ updateRow ] = useUpdateRowMutation()
+    const [data, setData] = useState(undefined)
+    const [updateRow] = useUpdateRowMutation()
 
     const handleSearch = (selectedKeys, confirm) => {
         confirm()
@@ -41,11 +41,11 @@ const BaseDateColumn = ({
         render: (text, record) => {
             return (
                 <DateSelect
-                    date={ text }
-                    record={ record }
-                    save={ handleSave }
-                    dataIndex={ dataIndex }
-                    displayMode={ !editable }
+                    date={text}
+                    record={record}
+                    save={handleSave}
+                    dataIndex={dataIndex}
+                    displayMode={!editable}
                 />
             )
         },
@@ -54,27 +54,27 @@ const BaseDateColumn = ({
             selectedKeys,
             confirm
         }) => (
-            <div style={ { padding: 8, maxWidth: 300 } }>
+            <div style={{ padding: 8, maxWidth: 300 }}>
                 <DatePicker.RangePicker
                     onChange={
                         dates => {
-                            const [ start, end ] = dates || []
-                            setSelectedKeys(start && end ? [ start.format('YYYY-MM-DDTHH:mm:ss'), end.format('YYYY-MM-DDTHH:mm:ss') ]
+                            const [start, end] = dates || []
+                            setSelectedKeys(start && end ? [start.format('YYYY-MM-DDTHH:mm:ss'), end.format('YYYY-MM-DDTHH:mm:ss')]
                                 : [])
-                            setData(dates ? [ start, end ] : undefined)
+                            setData(dates ? [start, end] : undefined)
                         }
                     }
-                    style={ { width: '100%', } }
+                    style={{ width: '100%', }}
                 />
                 <Button
-                    onClick={ () => handleSearch(selectedKeys, confirm) }
-                    icon={ <SearchOutlined /> }
+                    onClick={() => handleSearch(selectedKeys, confirm)}
+                    icon={<SearchOutlined />}
                     type="primary"
                     size="small"
-                    style={ {
+                    style={{
                         marginTop: 10,
                         width: 276,
-                    } }
+                    }}
                 >
                     Поиск
                 </Button>

@@ -2,6 +2,9 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -32,7 +35,7 @@ dd {
 
 body {
     min-height: 100vh;
-    font-family: 'Nunito', sans-serif;;
+    font-family: "Nunito", sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.4;
@@ -42,7 +45,7 @@ body {
 
 ul[class],
 ol[class] {
-    /*list-style: none;*/
+    list-style: none;
 }
 
 a:not([class]) {
@@ -67,7 +70,14 @@ button,
 textarea,
 select {
     font: inherit;
+    border: none;
+    outline: none;
 }
+button {
+    cursor: pointer;
+}
+
+
 
 @media (prefers-reduced-motion: reduce) {
     * {
