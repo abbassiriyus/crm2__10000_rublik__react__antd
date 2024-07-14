@@ -11,7 +11,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="ID_E"
                 onChange={getGeneralInfoValue}
@@ -26,7 +25,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="ID_legal_entity"
                 value={inp_GeneralInfo.ID_legal_entity}
@@ -41,7 +39,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="legal_form"
                 value={inp_GeneralInfo.legal_form}
                 onChange={getGeneralInfoValue}
@@ -58,7 +55,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="legal_entity_name"
                 value={inp_GeneralInfo.legal_entity_name}
@@ -73,7 +69,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="legal_address"
                 value={inp_GeneralInfo.legal_address}
@@ -88,7 +83,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="brand"
                 value={inp_GeneralInfo.brand}
                 onChange={getGeneralInfoValue}
@@ -105,7 +99,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="website"
                 value={inp_GeneralInfo.website}
@@ -120,7 +113,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="attracted_by"
                 value={inp_GeneralInfo.attracted_by}
                 onChange={getGeneralInfoValue}
@@ -137,7 +129,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="ku"
                 value={inp_GeneralInfo.ku}
                 onChange={getGeneralInfoValue}
@@ -154,7 +145,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="agent"
                 value={inp_GeneralInfo.agent}
                 onChange={getGeneralInfoValue}
@@ -171,7 +161,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="segments"
                 value={inp_GeneralInfo.segments}
                 onChange={getGeneralInfoValue}
@@ -188,7 +177,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="date"
                 name="connection_date"
                 value={inp_GeneralInfo.connection_date}
@@ -203,7 +191,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="external_status"
                 value={inp_GeneralInfo.external_status}
                 onChange={getGeneralInfoValue}
@@ -220,7 +207,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <select
-                className="input-control"
                 name="internal_status"
                 value={inp_GeneralInfo.internal_status}
                 onChange={getGeneralInfoValue}
@@ -237,7 +223,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="date"
                 name="termination_date"
                 value={inp_GeneralInfo.termination_date}
@@ -252,7 +237,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="suspect"
                 value={inp_GeneralInfo.suspect}
@@ -267,7 +251,6 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
             </td>
             <td>
               <input
-                className="input-control"
                 type="text"
                 name="sort"
                 value={inp_GeneralInfo.sort}
@@ -284,6 +267,8 @@ function GeneralInfo({ inp_GeneralInfo, getGeneralInfoValue, sendGeneralData }) 
     </form>
   </div>;
 }
+
+
 
 
 function RequisitesTT({ requisitesValue, getRequestValue, sendDataTT }) {
@@ -448,51 +433,8 @@ function RequisitesTT({ requisitesValue, getRequestValue, sendDataTT }) {
   );
 }
 
-import { Form, Input, Row, Col, Typography } from 'antd';
-
-const { Title } = Typography;
 function CooperationConditions() {
-  return <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-    <Form layout="vertical">
-      <Title level={4}>Direktor</Title>
-      <Row gutter={16}>
-        <Col span={6}>
-          <Form.Item label="Ism">
-            <Input defaultValue="Мис" />
-          </Form.Item>
-        </Col>
-        <Col span={6}>
-          <Form.Item label="Familiya">
-            <Input defaultValue="Эв" />
-          </Form.Item>
-        </Col>
-        <Col span={6}>
-          <Form.Item label="Otasining ismi">
-            <Input defaultValue="Лич" />
-          </Form.Item>
-        </Col>
-        <Col span={6}>
-          <Form.Item label="Tug'ilgan sanasi">
-            <Input />
-          </Form.Item>
-        </Col>
-      </Row>
-
-      <Title level={4}>TT bilan aloqa</Title>
-      <Row gutter={16}>
-        <Col span={6}>
-          <Form.Item label="Telefon">
-            <Input defaultValue="8499" />
-          </Form.Item>
-        </Col>
-        <Col span={6}>
-          <Form.Item label="E-mail">
-            <Input defaultValue="example@gmail.com" />
-          </Form.Item>
-        </Col>
-      </Row>
-    </Form>
-  </div>
+  return <div>Cooperation Conditions Content</div>;
 }
 
 function Comments() {
@@ -509,6 +451,7 @@ function AdditionalProducts() {
 
 function TabPage() {
   const [activeTab, setActiveTab] = useState('GeneralInfo');
+
   const renderTabContent = () => {
     // requisites TT tab uchun kerakli malumtlar
     const [requisitesValue, setRequisitesValue] = useState({
