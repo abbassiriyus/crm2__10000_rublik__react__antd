@@ -8,21 +8,21 @@ const { Title } = Typography
 
 // Компонент для рендеринга сложного InputText
 const InputTextRow = ({
-                          rowSpan,
-                          colSpan,
-                          title,
-                          name,
-                          isEditMode,
-                          record,
-                          handleSave,
-                          required,
-                          requiredMessage,
-                          entityId,
-                          tableName,
-                          dbFieldName,
-                          selectPath,
-                          selectParams
-                      }) => {
+    rowSpan,
+    colSpan,
+    title,
+    name,
+    isEditMode,
+    record,
+    handleSave,
+    required,
+    requiredMessage,
+    entityId,
+    tableName,
+    dbFieldName,
+    selectPath,
+    selectParams
+}) => {
 
     const {
         data: selectData = [],
@@ -35,22 +35,22 @@ const InputTextRow = ({
     const options = selectData.data ? selectData.data : selectData;
     return (
         <>
-            <Row gutter={ rowSpan | 16 }>
-                <Col span={ colSpan | 24 }>
-                    <Title level={ 5 }>{ title }</Title>
-                    <InputSelect options={ options }
-                                 loading={ selectIsLoading }
-                                 record={ record }
-                                 save={ handleSave }
-                                 dataIndex={ name }
-                                 displayMode={ !isEditMode }
-                                 entityId={ entityId }
-                                 tableName={ tableName }
-                                 dbFieldName={ dbFieldName }
-                                 rules={ [ {
-                                     required: required | true,
-                                     message: requiredMessage | 'Необходимо заполнить поле'
-                                 } ] }/>
+            <Row gutter={rowSpan | 16}>
+                <Col span={colSpan | 24}>
+                    <Title level={5}>{title}</Title>
+                    <InputSelect options={options}
+                        loading={selectIsLoading}
+                        record={record}
+                        save={handleSave}
+                        dataIndex={name}
+                        displayMode={!isEditMode}
+                        entityId={entityId}
+                        tableName={tableName}
+                        dbFieldName={dbFieldName}
+                        rules={[{
+                            required: required | true,
+                            message: requiredMessage | 'Необходимо заполнить поле'
+                        }]} />
                 </Col>
             </Row>
         </>

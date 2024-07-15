@@ -34,12 +34,16 @@ form table td {
     transition: 0.3s ease-in-out;
     border: 1px solid silver;
 }
+.tab-buttons button::first-letter {
+    text-transform: capitalize;
+}
 .tab-buttons button.active {
     background: white;
 }
 
-.btn-box  { /** send  buttonlar uchun ota div **/
-  text-align: right;
+.btn-box {
+    /** send  buttonlar uchun ota div **/
+    text-align: right;
 }
 .sendBtn {
     background-color: #4caf50;

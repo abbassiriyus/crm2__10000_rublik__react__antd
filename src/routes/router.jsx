@@ -3,11 +3,8 @@ import HomePage from '../pages/HomePage.jsx'
 import InfoPage from '../pages/InfoPage.jsx'
 import ReferenceListPage from '../pages/administration/ReferenceListPage.jsx'
 import ReferencePage from '../pages/administration/ReferencePage.jsx'
-import BankListPage from '../pages/administration/BankListPage.jsx'
-import BankPage from '../pages/administration/BankPage.jsx'
 import PotentialTable from '../pages/potential/PotentialTable.jsx'
 import AddRecordPage from '../pages/potential/AddRecordPage.jsx'
-import CompanyDraftListPage from '../pages/administration/CompanyDraftListPage.jsx'
 import Reports from '../pages/administration/Reports.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
 import Layout from '../components/Layout.jsx'
@@ -49,14 +46,6 @@ export const router = createBrowserRouter([
             {
                 path: '/potential/:id',
                 element: <AddRecordPage />
-            },
-            {
-                path: '/bank',
-                element: <BankListPage />
-            },
-            {
-                path: '/bank/:id',
-                element: <BankPage />
             },
             {
                 path: '/agentyl',

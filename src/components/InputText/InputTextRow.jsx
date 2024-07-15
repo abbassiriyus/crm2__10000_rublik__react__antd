@@ -22,22 +22,22 @@ const InputTextRow = ({
 }) => {
     return (
         <>
-            <Row gutter={ rowSpan | 16 }>
-                <Col span={ colSpan | 24 }>
-                    <Title level={ 5 }>{ title }</Title>
+            <Row gutter={rowSpan | 16}>
+                <Col span={colSpan | 24}>
+                    <Title level={5}>{title}</Title>
                     <InputText
-                        rules={ [ {
+                        rules={[{
                             required: required | true,
                             message: requiredMessage | 'Необходимо заполнить поле'
-                        } ] }
-                        displayMode={ !isEditMode }
-                        dataIndex={ name }
-                        record={ record }
-                        isFormItem={ isFormItem }
-                        save={ handleSave }
-                        entityId={ entityId }
-                        tableName={ tableName }
-                        dbFieldName={ dbFieldName }
+                        }]}
+                        displayMode={!isEditMode}
+                        dataIndex={name}
+                        record={record}
+                        isFormItem={isFormItem}
+                        save={handleSave}
+                        entityId={entityId}
+                        tableName={tableName}
+                        dbFieldName={dbFieldName}
                     />
                 </Col>
             </Row>
