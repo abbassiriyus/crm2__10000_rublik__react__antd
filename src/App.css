@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .form_box form {
     margin-top: 30px;
     gap: 20px;
@@ -66,3 +67,73 @@ form table td {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: translateY(1px);
 }
+=======
+.form_box form {
+    margin-top: 30px;
+    gap: 20px;
+    width: 50%;
+    /* border: 1px solid gray; */
+}
+form table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+form table td {
+    /* border: 1px solid gray; */
+    padding: 5px;
+}
+.form_box .input-control {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.tab-buttons button {
+    background: rgb(234, 234, 234);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    border: 1px solid silver;
+}
+.tab-buttons button.active {
+    background: white;
+}
+
+.btn-box  { /** send  buttonlar uchun ota div **/
+  text-align: right;
+}
+.sendBtn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-transform: capitalize;
+}
+
+.sendBtn:hover {
+    background-color: #45a049;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sendBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+>>>>>>> 9456746e065c2a67869e6d4b87da5193b7626138
