@@ -3,143 +3,12 @@ import './main.css'
 import { HiRefresh } from 'react-icons/hi';
 import { AiOutlineClear } from 'react-icons/ai';
 import { Pagination } from 'antd';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function MainTable() {
-
-
-
-  const data = [
-    {
-      idTT: '1',
-      inn: '123456789',
-      yuridicheskoeLitso: 'Company A',
-      brend: 'option-1',
-      naselenniyPunkit: 'City A',
-      adres: 'Address A',
-      dataPosledneyProdaji: '2023-06-01',
-      kurator: 'option-1',
-      segment: 'option-1',
-      texnalogiya: 'Technology A',
-      dataPodklyucheniya: '2023-01-01',
-    },
-    {
-      idTT: '2',
-      inn: '987654321',
-      yuridicheskoeLitso: 'Company B',
-      brend: 'option-2',
-      naselenniyPunkit: 'City B',
-      adres: 'Address B',
-      dataPosledneyProdaji: '2023-06-02',
-      kurator: 'option-2',
-      segment: 'option-2',
-      texnalogiya: 'Technology B',
-      dataPodklyucheniya: '2023-01-02',
-    },
-    {
-      idTT: '3',
-      inn: '123123123',
-      yuridicheskoeLitso: 'Company C',
-      brend: 'option-3',
-      naselenniyPunkit: 'City C',
-      adres: 'Address C',
-      dataPosledneyProdaji: '2023-06-03',
-      kurator: 'option-3',
-      segment: 'option-3',
-      texnalogiya: 'Technology C',
-      dataPodklyucheniya: '2023-01-03',
-    },
-    {
-      idTT: '4',
-      inn: '654321987',
-      yuridicheskoeLitso: 'Company D',
-      brend: 'option-4',
-      naselenniyPunkit: 'City D',
-      adres: 'Address D',
-      dataPosledneyProdaji: '2023-06-04',
-      kurator: 'option-4',
-      segment: 'option-4',
-      texnalogiya: 'Technology D',
-      dataPodklyucheniya: '2023-01-04',
-    },
-    {
-      idTT: '5',
-      inn: '321654987',
-      yuridicheskoeLitso: 'Company E',
-      brend: 'option-1',
-      naselenniyPunkit: 'City E',
-      adres: 'Address E',
-      dataPosledneyProdaji: '2023-06-05',
-      kurator: 'option-1',
-      segment: 'option-1',
-      texnalogiya: 'Technology E',
-      dataPodklyucheniya: '2023-01-05',
-    },
-    {
-      idTT: '6',
-      inn: '789654123',
-      yuridicheskoeLitso: 'Company F',
-      brend: 'option-2',
-      naselenniyPunkit: 'City F',
-      adres: 'Address F',
-      dataPosledneyProdaji: '2023-06-06',
-      kurator: 'option-2',
-      segment: 'option-2',
-      texnalogiya: 'Technology F',
-      dataPodklyucheniya: '2023-01-06',
-    },
-    {
-      idTT: '7',
-      inn: '456789321',
-      yuridicheskoeLitso: 'Company G',
-      brend: 'option-3',
-      naselenniyPunkit: 'City G',
-      adres: 'Address G',
-      dataPosledneyProdaji: '2023-06-07',
-      kurator: 'option-3',
-      segment: 'option-3',
-      texnalogiya: 'Technology G',
-      dataPodklyucheniya: '2023-01-07',
-    },
-    {
-      idTT: '8',
-      inn: '321987654',
-      yuridicheskoeLitso: 'Company H',
-      brend: 'option-4',
-      naselenniyPunkit: 'City H',
-      adres: 'Address H',
-      dataPosledneyProdaji: '2023-06-08',
-      kurator: 'option-4',
-      segment: 'option-4',
-      texnalogiya: 'Technology H',
-      dataPodklyucheniya: '2023-01-08',
-    },
-    {
-      idTT: '9',
-      inn: '789123456',
-      yuridicheskoeLitso: 'Company I',
-      brend: 'option-1',
-      naselenniyPunkit: 'City I',
-      adres: 'Address I',
-      dataPosledneyProdaji: '2023-06-09',
-      kurator: 'option-1',
-      segment: 'option-1',
-      texnalogiya: 'Technology I',
-      dataPodklyucheniya: '2023-01-09',
-    },
-    {
-      idTT: '10',
-      inn: '654123789',
-      yuridicheskoeLitso: 'Company J',
-      brend: 'option-2',
-      naselenniyPunkit: 'City J',
-      adres: 'Address J',
-      dataPosledneyProdaji: '2023-06-10',
-      kurator: 'option-2',
-      segment: 'option-2',
-      texnalogiya: 'Technology J',
-      dataPodklyucheniya: '2023-01-10',
-    }
-  ];
+  const { data } = useSelector((state) => state.MainTable)
+  const navigate = useNavigate()
   const [filteredData, setFilteredData] = useState(data);
 
   const [inputValue, setInputValue] = useState({
@@ -192,7 +61,7 @@ export default function MainTable() {
   };
 
   return (
-    <div className='container' >
+    <div className='container'>
       <div className='main-box' >
         <div className='flex gap-2' >
           <button className='refresh' > <HiRefresh /> yangilash </button>
@@ -339,7 +208,9 @@ export default function MainTable() {
             {
               paginatedData.length > 0 ? (
                 paginatedData.map((item, index) => (
-                  <tr key={index}>
+                  <tr key={index} className='hoverTr'
+                    onClick={() => navigate('/tables')}
+                  >
                     <td>{item.idTT}</td>
                     <td>{item.inn}</td>
                     <td>{item.yuridicheskoeLitso}</td>
@@ -352,8 +223,14 @@ export default function MainTable() {
                     <td>{item.texnalogiya}</td>
                     <td>{item.dataPodklyucheniya}</td>
                     <td>
-                      <button className='infoBtn' > info TT </button>
-                      <button className='infoBtn' > info Company </button>
+                      <button className='infoBtn' onClick={(e) => {
+                        e.stopPropagation()
+                        navigate(`${item.idTT}`)
+                      }} > info TT </button>
+                      <button className='infoBtn' onClick={(e) => {
+                        e.stopPropagation()
+                        navigate('/company-info')
+                      }}  > info Company </button>
                     </td>
                   </tr>
                 ))

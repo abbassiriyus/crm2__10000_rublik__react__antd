@@ -1,30 +1,56 @@
-.form_box form {
+.form_box {
     margin-top: 30px;
     gap: 20px;
     width: 50%;
-    /* border: 1px solid gray; */
 }
-form table {
+.form_box table {
     border-collapse: collapse;
     width: 100%;
+    border: 1px solid #ebedf0;
 }
-
-form table td {
-    /* border: 1px solid gray; */
+.commentTable > table {
+    border-collapse: collapse;
+    width: 50%;
+    border: 1px solid #ebedf0;
+    margin-top: 20px;
+}
+.form_box table td,
+.commentTable table td {
     padding: 5px;
 }
 .form_box .input-control {
     width: 100%;
     padding: 5px 10px;
+    border: 1px solid #ebedf0;
 }
-
+.commentTable .input-control {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ebedf0;
+}
+.banks_table .input-control {
+    width: 100%;
+    padding: 5px 10px;
+}
 .tab-buttons {
     display: flex;
-    gap: 20px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.commentBox.form_box {
+    width: 100%;
 }
 
+.borderTop {
+    border: 1px solid rgba(192, 192, 192, 0.311);
+    border-top: 10px solid #ebedf0;
+    padding: 5px;
+}
+.textR {
+    text-align: right;
+}
 .tab-buttons button {
-    background: rgb(234, 234, 234);
+    background: #f5f5f5;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
@@ -34,6 +60,9 @@ form table td {
     transition: 0.3s ease-in-out;
     border: 1px solid silver;
 }
+.tab-buttons button::first-letter {
+    text-transform: capitalize;
+}
 .tab-buttons button.active {
     background: white;
 }
@@ -42,7 +71,8 @@ form table td {
     /** send  buttonlar uchun ota div **/
     text-align: right;
 }
-.sendBtn {
+.sendBtn,
+.addInput {
     background-color: #4caf50;
     border: none;
     color: white;
@@ -56,6 +86,11 @@ form table td {
     transition: background-color 0.3s, box-shadow 0.3s;
     text-transform: capitalize;
 }
+.addInput {
+    padding: 5px 15px;
+    background-color: #2399e5;
+    border-radius: 5px;
+}
 
 .sendBtn:hover {
     background-color: #45a049;
@@ -66,4 +101,20 @@ form table td {
     background-color: #3e8e41;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: translateY(1px);
+}
+.comment_Box {
+    border: none;
+    width: 100%;
+}
+.comment_Box table {
+    width: 100%;
+    border: none;
+}
+.comment_Box table td,
+.comment_Box table th {
+    padding: 10px;
+}
+.comment_Box table tr {
+    border-bottom: 1px solid #ebedf0;
+    text-align: justify;
 }

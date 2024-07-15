@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     items.push({
         key: 0,
-        label: <Link to="/">Главная страница</Link>,
+        label: <Link to="/home">Главная страница</Link>,
     })
 
     items.push({
@@ -25,7 +25,7 @@ const Sidebar = () => {
         label: 'Компании',
         children: [{
             key: 2,
-            icon: <LineChartOutlined/>,
+            icon: <LineChartOutlined />,
             label: <Link to="/company">Черновики</Link>
         }]
     })
@@ -39,11 +39,11 @@ const Sidebar = () => {
             children: [{
                 key: 7,
                 label: <Link to="/reference">Справочники</Link>,
-                icon: <UnorderedListOutlined/>
+                icon: <UnorderedListOutlined />
             }, {
                 key: 8,
                 label: <Link to="/bank">Банки</Link>,
-                icon: <UnorderedListOutlined/>
+                icon: <UnorderedListOutlined />
             }],
         }]
     })
@@ -51,7 +51,7 @@ const Sidebar = () => {
     role !== 'admin' && items.push({
         key: 9,
         label: 'Агенты',
-        icon: <AuditOutlined/>,
+        icon: <AuditOutlined />,
         children: [{
             key: 3,
             label: <Link to="/agentYL">Агенты ЮЛ</Link>
@@ -63,20 +63,20 @@ const Sidebar = () => {
 
     items.push({
         key: 12,
-        icon: <LineChartOutlined/>,
+        icon: <LineChartOutlined />,
         label: <Link to="/potential">Потенциал</Link>
     })
 
     items.push({
         key: 13,
         label: <Link to="/reports">Журналы и отчеты</Link>,
-        icon: <LineChartOutlined/>
+        icon: <LineChartOutlined />
     })
 
     role !== 'admin' && items.push({
         key: 15,
         label: 'Контрагенты',
-        icon: <AuditOutlined/>,
+        icon: <AuditOutlined />,
         children: [{
             key: 16,
             label: <Link to="/otpTTList">Загрузка ТТ в ОТП</Link>
@@ -87,7 +87,7 @@ const Sidebar = () => {
     })
     items.push({
         key: 17,
-        icon: <LineChartOutlined/>,
+        icon: <LineChartOutlined />,
         label: <Link to="/uploadClients">Загрузка клиентов массивом</Link>
     })
 
@@ -102,7 +102,7 @@ const Sidebar = () => {
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 style={{ height: '100%' }}
-                items={items}/>
+                items={items} />
         </Sider>
     )
 }

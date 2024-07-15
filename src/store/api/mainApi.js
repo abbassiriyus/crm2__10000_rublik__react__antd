@@ -39,21 +39,21 @@ export const mainApi = createApi({
                 filters,
                 path
             }) =>
-                ({
-                    url: path + '/list',
-                    method: 'post',
-                    body: {
-                        order: {
-                            field: sort?.sortField ? sort.sortField : 'id',
-                            sort_type: sort?.sortDirection && sort.sortDirection === 'descend' ? 'DESC' : 'ASC'
-                        },
-                        pageable: {
-                            page: page,
-                            size: pageSize
-                        },
-                        filter: filters,
-                    }
-                })
+            ({
+                url: path + '/list',
+                method: 'post',
+                body: {
+                    order: {
+                        field: sort?.sortField ? sort.sortField : 'id',
+                        sort_type: sort?.sortDirection && sort.sortDirection === 'descend' ? 'DESC' : 'ASC'
+                    },
+                    pageable: {
+                        page: page,
+                        size: pageSize
+                    },
+                    filter: filters,
+                }
+            })
             ,
             providesTags: result =>
                 result

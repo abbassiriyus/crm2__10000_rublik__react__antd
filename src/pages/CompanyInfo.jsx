@@ -1,26 +1,21 @@
-import { useState } from "react";
-import GeneralInfo from "../components/InfoPage/GeneralInfo";
-import InfoRequestTT from "../components/InfoPage/InfoRequestTT";
-import Usloviya from "../components/InfoPage/Usloviya";
-import Comments from "../components/InfoPage/Comments";
-import ExtraProduct from "../components/InfoPage/ExtraProduct";
+import React, { useState } from 'react'
+import CompGeneralInfo from '../components/CompanyInfo/CompGeneralInfo';
+import CompRequest from '../components/CompanyInfo/CompRequest';
 
-function InfoPage() {
+export default function CompanyInfo() {
   const [activeTab, setActiveTab] = useState('GeneralInfo');
   const renderTabContent = () => {
     switch (activeTab) {
       case 'GeneralInfo':
-        return <GeneralInfo />;
+        return <CompGeneralInfo />;
       case 'RequisitesTT':
-        return <InfoRequestTT />;
-      case 'Usloviya':
-        return <Usloviya />;
+        return <CompRequest />;
+      case 'dogovor':
+        return "'dogovor':";
       case 'Comments':
-        return <Comments />;
+        return "comments";
       case 'Banks':
         return 'Banks';
-      case 'AdditionalProducts':
-        return <ExtraProduct />
       default:
         return null;
     }
@@ -37,18 +32,18 @@ function InfoPage() {
     },
     {
       text: "Условия сотруднишества ",
-      tab: "Usloviya"
+      tab: "dogovor"
     },
     {
-      text: "Комментарий по ТО",
+      text: "доп инфо компаний ",
       tab: "Comments"
     },
     {
-      text: "Банки",
+      text: "условие сотрочества ",
       tab: "Banks"
     },
     {
-      text: "Доп. продукты",
+      text: "сотрудничества",
       tab: "AdditionalProducts"
     },
 
@@ -71,5 +66,3 @@ function InfoPage() {
     </div>
   );
 }
-
-export default InfoPage;

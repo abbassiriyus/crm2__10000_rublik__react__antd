@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function GeneralInfo() {
+function CompGeneralInfo() {
   const [inp_GeneralInfo, setinp_GeneralInfo] = useState({
     ID_E: '',
     ID_legal_entity: '',
@@ -316,3 +316,5 @@ export default function GeneralInfo() {
     </form>
   </div>;
 }
+
+export default CompGeneralInfo

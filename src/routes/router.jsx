@@ -1,11 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '../pages/HomePage.jsx'
 import InfoPage from '../pages/InfoPage.jsx'
-import ReferenceListPage from '../pages/administration/ReferenceListPage.jsx'
-import ReferencePage from '../pages/administration/ReferencePage.jsx'
 import PotentialTable from '../pages/potential/PotentialTable.jsx'
 import AddRecordPage from '../pages/potential/AddRecordPage.jsx'
-import Reports from '../pages/administration/Reports.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
 import Layout from '../components/Layout.jsx'
 import AgentYLListPage from '../pages/agent/AgentYLListPage.jsx'
@@ -14,8 +11,8 @@ import AgentFLListPage from '../pages/agent/AgentFLListPage'
 import AgentFLPage from '../pages/agent/AgentFLPage'
 import OtpAgentListPage from '../pages/contragent/OtpAgentListPage.jsx'
 import OtpTTListPage from '../pages/contragent/OtpTTListPage.jsx'
-import UploadClients from "../pages/administration/UploadClients.jsx";
-import TabPage from '../pages/administration/CompanyDraftListPage.jsx'
+import MainPage from '../pages/MainPage.jsx'
+import CompanyInfo from '../pages/CompanyInfo.jsx'
 
 export const router = createBrowserRouter([
     {
@@ -24,24 +21,24 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                path: "/",
+                path: "/home",
                 element: <HomePage />,
             },
             {
-                path: '/:id',
+                path: 'home/:id',
                 element: <InfoPage />,
             },
             {
-                path: '/reference',
-                element: <ReferenceListPage />,
-            },
-            {
-                path: '/reference/:id',
-                element: <ReferencePage />
+                path: '/tables',
+                element: <MainPage />,
             },
             {
                 path: '/potential',
                 element: <PotentialTable />
+            },
+            {
+                path: '/company-info',
+                element: <CompanyInfo />
             },
             {
                 path: '/potential/:id',
@@ -64,14 +61,6 @@ export const router = createBrowserRouter([
                 element: <AgentFLPage />
             },
             {
-                path: '/company',
-                element: <TabPage />
-            },
-            {
-                path: '/reports',
-                element: <Reports />
-            },
-            {
                 path: '/otpTTList',
                 element: <OtpTTListPage />
             },
@@ -79,10 +68,6 @@ export const router = createBrowserRouter([
                 path: '/otpAgentList',
                 element: <OtpAgentListPage />
             },
-            {
-                path: 'uploadClients',
-                element: <UploadClients />
-            }
         ],
     },
     {

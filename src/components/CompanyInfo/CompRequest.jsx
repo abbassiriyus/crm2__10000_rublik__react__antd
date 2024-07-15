@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-export default function RequisitesTT() {
+import React from 'react'
+
+function CompRequest() {
   const [requisitesValue, setRequisitesValue] = useState({
     OGRN: '',
     INN: '',
@@ -188,3 +190,4 @@ export default function RequisitesTT() {
     </div>
   );
 }
+export default CompRequest
