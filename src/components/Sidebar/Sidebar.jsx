@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { AuditOutlined, LineChartOutlined, UnorderedListOutlined } from '@ant-design/icons'
+import { AuditOutlined, LineChartOutlined, TableOutlined, UnorderedListOutlined } from '@ant-design/icons'
 import { Layout, Menu } from 'antd'
 import { Link } from 'react-router-dom'
 
@@ -89,6 +89,11 @@ const Sidebar = () => {
         key: 17,
         icon: <LineChartOutlined />,
         label: <Link to="/uploadClients">Загрузка клиентов массивом</Link>
+    })
+    items.push({
+        key: 18,
+        icon: <TableOutlined />,
+        label: <Link to="/home/tables">home - tables</Link>
     })
 
     return (
