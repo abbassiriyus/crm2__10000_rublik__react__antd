@@ -31,7 +31,6 @@ function CompGeneralInfo() {
 
   const sendGeneralData = (e) => {
     e.preventDefault()
-    console.log(inp_GeneralInfo /** inputdan olingan malumtolar api ga jo'natishga tayyor */);
   }
   return <div className='form_box'  >
     <form onSubmit={sendGeneralData}>

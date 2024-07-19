@@ -58,8 +58,6 @@ const MainTable = ({
     }
   })
 
-  console.log(preparedColumns);
-
   function handlePaginationChange(page, pageSize) {
     setSearchParams({
       page,
@@ -134,7 +132,7 @@ const MainTable = ({
   return (
     <>
       <Breadcrumbs />
-      <Space align="center">
+      <Space align="center" className='tableBtn' >
         <Button
           type="primary"
           shape="default"

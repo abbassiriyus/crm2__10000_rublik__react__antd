@@ -24,7 +24,6 @@ const PotentialTable = () => {
         CreationDateColumn,
         BrandColumn({
             editable: true,
-            handleSave: (row) => console.log("Save row:", row),
             options: selectData,
             isLoading
         }),

@@ -25,7 +25,6 @@ const Login = () => {
         e.preventDefault()
         const actionResult = await dispatch(fetchToken(credentials))
         const result = unwrapResult(actionResult)
-        console.log(result)
         navigate('/')
     }
 
@@ -38,7 +37,7 @@ const Login = () => {
                         name="login"
                         value={credentials.login}
                         onChange={handleChange}
-                        placeholder="Логин"/>
+                        placeholder="Логин" />
                 </Form.Item>
                 <Form.Item rules={[{ required: true }]}>
                     <Input

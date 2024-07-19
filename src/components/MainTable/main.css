@@ -84,3 +84,7 @@ thead tr {
 .infoBtn:first-child {
     margin-bottom: 8px;
 }
+
+.tableBtn {
+    margin-bottom: 15px;
+}

@@ -31,10 +31,6 @@ export default function InfoRequestTT() {
     console.log(requisitesValue /** inputdan olingan malumtolar api ga jo'natishga tayyor */);
   }
 
-  const onChange = (date, dateString) => {
-    console.log(date, dateString);
-  };
-
   /** ant design selectdan malumot olish uchun  */
   const getGeneralSelectValue = (value, option) => {
     const { name } = option;
