@@ -4,6 +4,7 @@ import InfoRequestTT from "../components/InfoPage/InfoRequestTT";
 import Usloviya from "../components/InfoPage/Usloviya";
 import Comments from "../components/InfoPage/Comments";
 import ExtraProduct from "../components/InfoPage/ExtraProduct";
+import Breadcrumbs from "../components/BreadCrumb/BreadCrumb";
 
 function InfoPage() {
   const [activeTab, setActiveTab] = useState('GeneralInfo');
@@ -56,6 +57,7 @@ function InfoPage() {
   ]
   return (
     <div className="container" >
+      <Breadcrumbs />
       <div className="tab-buttons">
         {
           btnData.map((btn, index) => {

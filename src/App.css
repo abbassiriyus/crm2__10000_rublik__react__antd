@@ -18,6 +18,12 @@
 .commentTable table td {
     padding: 5px;
 }
+.compContract {
+    text-align: left;
+}
+.compContract th, .compContract td{
+    padding: 10px;
+}
 .form_box .input-control {
     width: 100%;
     padding: 5px 10px;
@@ -117,4 +123,26 @@
 .comment_Box table tr {
     border-bottom: 1px solid #ebedf0;
     text-align: justify;
+}
+
+.mb-5 {
+    margin-bottom: 10px;
+}
+.breadCrumb * {
+    font-size: 18px;
+}
+.breadCrumb a {
+    font-size: 18px;
+    color: #0087e2;
+}
+.breadCrumb a:hover {
+    text-decoration: underline;
+    color: #0897f6;
+    background: transparent;
+}
+
+.breadCrumb li:last-child a {
+    color: gray;
+    text-decoration: none;
+    cursor: default;
 }

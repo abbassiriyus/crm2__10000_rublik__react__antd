@@ -54,10 +54,10 @@ const Sidebar = () => {
         icon: <AuditOutlined />,
         children: [{
             key: 3,
-            label: <Link to="/agentYL">Агенты ЮЛ</Link>
+            label: <Link to="/agentyl">Агенты ЮЛ</Link>
         }, {
             key: 4,
-            label: <Link to="/agentFL">Агенты ФЛ</Link>
+            label: <Link to="/agentfl">Агенты ФЛ</Link>
         }]
     })
 

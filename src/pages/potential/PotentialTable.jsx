@@ -31,12 +31,12 @@ const PotentialTable = () => {
         LegalEntityColumn({ editable: true, handleSave }),
         SegmentColumn({ editable: true, handleSave }),
         ROPColumn({ editable: true, handleSave }),
-        TrademarkColumn({editable: true, handleSave}),
-        SettlementColumn({editable: true, handleSave}),
+        TrademarkColumn({ editable: true, handleSave }),
+        SettlementColumn({ editable: true, handleSave }),
         AddressColumn(),
-        ReferrerColumn({editable: true, handleSave}),
-        StatusChangeDateColumn({editable: true, handleSave}),
-        StatusChangeDateColumn({editable: true, handleSave}),
+        ReferrerColumn({ editable: true, handleSave }),
+        StatusChangeDateColumn({ editable: true, handleSave }),
+        StatusChangeDateColumn({ editable: true, handleSave }),
     ];
 
     return (

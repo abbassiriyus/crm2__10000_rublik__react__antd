@@ -1,9 +1,9 @@
 import React from 'react'
-import {Form} from 'antd'
+import { Form } from 'antd'
 
 export const EditableContext = React.createContext(null)
 
-const EditableRow = ({index, ...props}) => {
+const EditableRow = ({ index, ...props }) => {
     const [form] = Form.useForm()
     return (
         <Form form={form} component={false}>

@@ -13,6 +13,12 @@ import OtpAgentListPage from '../pages/contragent/OtpAgentListPage.jsx'
 import OtpTTListPage from '../pages/contragent/OtpTTListPage.jsx'
 import MainPage from '../pages/MainPage.jsx'
 import CompanyInfo from '../pages/CompanyInfo.jsx'
+import Home from '../pages/Home.jsx'
+import UploadClients from '../pages/administration/UploadClients.jsx'
+import Reports from '../pages/administration/Reports.jsx'
+import ReferenceListPage from '../pages/administration/ReferenceListPage.jsx'
+import BankListPage from '../pages/administration/BankListPage.jsx'
+import CompanyDraftListPage from '../pages/administration/CompanyDraftListPage.jsx'
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +26,10 @@ export const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                index: true,
+                path: "/",
+                element: <Home />,
+            },
+            {
                 path: "/home",
                 element: <HomePage />,
             },
@@ -29,7 +38,7 @@ export const router = createBrowserRouter([
                 element: <InfoPage />,
             },
             {
-                path: '/tables',
+                path: 'home/tables',
                 element: <MainPage />,
             },
             {
@@ -37,8 +46,40 @@ export const router = createBrowserRouter([
                 element: <PotentialTable />
             },
             {
-                path: '/company-info',
+                path: '/uploadClients',
+                element: <UploadClients />
+            },
+            {
+                path: '/home/company-info',
                 element: <CompanyInfo />
+            },
+            {
+                path: '/reports',
+                element: <Reports />
+            },
+            {
+                path: '/bank',
+                element: <BankListPage />
+            },
+            {
+                path: '/company',
+                element: <CompanyDraftListPage />
+            },
+            {
+                path: '/company/:id',
+                element: <InfoPage />
+            },
+            {
+                path: '/reference/:id',
+                element: <InfoPage />
+            },
+            {
+                path: '/bank/:id',
+                element: <InfoPage />
+            },
+            {
+                path: '/reference',
+                element: <ReferenceListPage />
             },
             {
                 path: '/potential/:id',
@@ -50,7 +91,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/agentyl/:id',
-                element: <AgentYLPage />
+                element: <InfoPage />
             },
             {
                 path: '/agentfl',
@@ -58,7 +99,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/agentfl/:id',
-                element: <AgentFLPage />
+                element: <InfoPage />
             },
             {
                 path: '/otpTTList',

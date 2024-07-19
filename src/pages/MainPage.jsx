@@ -9,6 +9,7 @@ import ContactUvedomlena from '../components/MainPageComponent/ContactUvedomlena
 import All_Info from '../components/MainPageComponent/All_Info';
 import Banks from '../components/MainPageComponent/Banks';
 import Comments from '../components/MainPageComponent/Comments';
+import Breadcrumbs from '../components/BreadCrumb/BreadCrumb';
 
 function MainPage() {
   const [activeTab, setActiveTab] = useState('sales');
@@ -48,6 +49,7 @@ function MainPage() {
 
   return (
     <div className='container' >
+      <Breadcrumbs />
       <div className="tab-buttons">
         {
           btnData.map((btn, index) => {
