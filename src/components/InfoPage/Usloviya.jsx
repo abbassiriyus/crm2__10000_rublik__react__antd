@@ -22,10 +22,9 @@ export default function Usloviya() {
 
   const sendGeneralData = (e) => {
     e.preventDefault()
-    console.log(inp_GeneralInfo /** inputdan olingan malumtolar api ga jo'natishga tayyor */);
+    console.log(inp_GeneralInfo);
   }
 
-  /** ant design selectdan malumot olish uchun  */
   const getGeneralSelectValue = (value, option) => {
     const { name } = option;
     setInp_GeneralInfo(prevState => ({
@@ -39,7 +38,6 @@ export default function Usloviya() {
     values[index].value = event.target.value;
     setInputs(values);
 
-    // Ob'ektning ichidagi massivga qiymatlarni saqlash
     const shaxsiy_havola_manzili = values.map(input => input.value);
     setInp_GeneralInfo({
       ...inp_GeneralInfo,

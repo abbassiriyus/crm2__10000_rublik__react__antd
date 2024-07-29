@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export default function CompCommercialTerms() {
+function CompCommercialTerms() {
+  
   return (
-    <div>CompCommercialTerms</div>
-  )
+    <div>
+      compCommers
+    </div>    
+  );
 }
+
+export default CompCommercialTerms;
