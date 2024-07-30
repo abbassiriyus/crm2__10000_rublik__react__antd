@@ -1,77 +1,49 @@
-import { useState } from "react";
-import GeneralInfo from "../components/InfoPage/GeneralInfo";
-import InfoRequestTT from "../components/InfoPage/InfoRequestTT";
-import Usloviya from "../components/InfoPage/Usloviya";
-import Comments from "../components/InfoPage/Comments";
-import ExtraProduct from "../components/InfoPage/ExtraProduct";
-import Breadcrumbs from "../components/BreadCrumb/BreadCrumb";
+import InfoTable from '../components/InfoTable/InfoTable.jsx'
+import Breadcrumbs from '../components/BreadCrumb/BreadCrumb.jsx'
 
-function InfoPage() {
-  const [activeTab, setActiveTab] = useState('GeneralInfo');
-  const renderTabContent = () => {
-    switch (activeTab) {
-      case 'GeneralInfo':
-        return <GeneralInfo />;
-      case 'RequisitesTT':
-        return <InfoRequestTT />;
-      case 'Usloviya':
-        return <Usloviya />;
-      case 'Comments':
-        return <Comments />;
-      case 'Banks':
-        return 'Banks';
-      case 'AdditionalProducts':
-        return <ExtraProduct />
-      default:
-        return null;
-    }
-  };
-
-  const btnData = [
-    {
-      text: "Общая информация",
-      tab: "GeneralInfo"
-    },
-    {
-      text: "Реквизиты Т",
-      tab: "RequisitesTT"
-    },
-    {
-      text: "Условия сотруднишества ",
-      tab: "Usloviya"
-    },
-    {
-      text: "Комментарий по ТО",
-      tab: "Comments"
-    },
-    {
-      text: "Банки",
-      tab: "Banks"
-    },
-    {
-      text: "Доп. продукты",
-      tab: "AdditionalProducts"
-    },
-
-
-  ]
-  return (
-    <div className="container" >
-      <Breadcrumbs />
-      <div className="tab-buttons">
-        {
-          btnData.map((btn, index) => {
-            return (
-              <button key={index} className={`${btn.tab === activeTab ? 'active' : ""} tabBtn `} onClick={() => setActiveTab(btn.tab)}> {btn.text} </button>
-            )
-          })
-        }
-      </div>
-      <div className="tab-content">
-        {renderTabContent()}
-      </div>
-    </div>
-  );
+const metadata = {
+  'GeneralInfo': [{
+    'name': 'name',
+    'type': 'GeneralInfo',
+    'title': 'Первый компонент'
+  }],
+  'RequisitesTT': [{
+    'name': 'element3',
+    'type': 'RequisitesTT',
+    'title': 'Третий компонент'
+  }],
+  'Usloviya': [{
+    'name': 'element3',
+    'type': 'Usloviya',
+    'title': 'Третий компонент'
+  }],
+  'Comments': [{
+    'name': 'element3',
+    'type': 'Comments',
+    'title': 'Третий компонент'
+  }],
+  'Banks': [{
+    'name': 'element3',
+    'type': 'Banks',
+    'title': 'Третий компонент'
+  }],
+  'AdditionalProducts': [{
+    'name': 'element3',
+    'type': 'AdditionalProducts',
+    'title': 'Третий компонент'
+  }],
 }
 
-export default InfoPage;
+const InfoPage = () => {
+  return (
+    <>
+      {/*В path указывается путь API для получения данных. В метада описание табов и полей*/}
+      <div className="container">
+        <Breadcrumbs />
+        <InfoTable path={'reference'} metadata={metadata} />
+      </div>
+    </>
+  )
+}
+
+export default InfoPage
