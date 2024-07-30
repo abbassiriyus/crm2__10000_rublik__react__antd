@@ -88,3 +88,6 @@ thead tr {
 .tableBtn {
     margin-bottom: 15px;
 }
+.ant-layout .ant-layout-sider {
+    background: transparent;
+}
