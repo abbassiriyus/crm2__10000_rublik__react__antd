@@ -1,47 +1,44 @@
 import { Col, Row, Typography } from 'antd'
-import PropTypes, { bool, func, object, string } from 'prop-types'
+import PropTypes from 'prop-types'
 import InputText from './InputText.jsx'
 
 const { Title } = Typography
 
-// Компонент для рендеринга сложного InputText
 const InputTextRow = ({
-    rowSpan,
-    colSpan,
-    title,
+    rowSpan = 16,
+    colSpan = 24,
+    title = '',
     name,
-    isEditMode,
-    record,
-    handleSave,
-    required,
-    requiredMessage,
-    entityId,
-    tableName,
-    dbFieldName,
-    isFormItem
+    isEditMode = false,
+    record = {},
+    handleSave = () => { },
+    required = false,
+    requiredMessage = 'Необходимо заполнить поле',
+    entityId = '',
+    tableName = '',
+    dbFieldName = '',
+    isFormItem = true
 }) => {
     return (
-        <>
-            <Row gutter={ rowSpan | 16 }>
-                <Col span={ colSpan | 24 }>
-                    <Title level={ 5 }>{ title }</Title>
-                    <InputText
-                        rules={ [ {
-                            required: required | true,
-                            message: requiredMessage | 'Необходимо заполнить поле'
-                        } ] }
-                        displayMode={ !isEditMode }
-                        dataIndex={ name }
-                        record={ record }
-                        isFormItem={ isFormItem }
-                        save={ handleSave }
-                        entityId={ entityId }
-                        tableName={ tableName }
-                        dbFieldName={ dbFieldName }
-                    />
-                </Col>
-            </Row>
-        </>
+        <Row gutter={rowSpan}>
+            <Col span={colSpan}>
+                <Title level={5}>{title}</Title>
+                <InputText
+                    rules={[{
+                        required: required,
+                        message: requiredMessage
+                    }]}
+                    displayMode={!isEditMode}
+                    dataIndex={name}
+                    record={record}
+                    isFormItem={isFormItem}
+                    save={handleSave}
+                    entityId={entityId}
+                    tableName={tableName}
+                    dbFieldName={dbFieldName}
+                />
+            </Col>
+        </Row>
     )
 }
 
@@ -52,13 +49,13 @@ InputTextRow.propTypes = {
     isEditMode: PropTypes.bool,
     required: PropTypes.bool,
     requiredMessage: PropTypes.string,
-    title: string,
-    record: object,
-    handleSave: func,
-    entityId: string,
-    tableName: string,
-    dbFieldName: string,
-    isFormItem: bool
+    title: PropTypes.string,
+    record: PropTypes.object,
+    handleSave: PropTypes.func,
+    entityId: PropTypes.string,
+    tableName: PropTypes.string,
+    dbFieldName: PropTypes.string,
+    isFormItem: PropTypes.bool
 }
 
 export default InputTextRow

@@ -32,6 +32,21 @@ const metadata = {
     'type': 'AdditionalProducts',
     'title': 'Третий компонент'
   }],
+  'InputTextRow': [{
+    'name': 'element3',
+    'type': 'InputTextRow',
+    'title': 'Третий компонент'
+  }],
+  'InputTextRowList': [{
+    'name': 'element3',
+    'type': 'InputTextRowList',
+    'title': 'Третий компонент'
+  }],
+  'InputSelectRow': [{
+    'name': 'element3',
+    'type': 'InputSelectRow',
+    'title': 'Третий компонент'
+  }],
 }
 
 const InfoPage = () => {

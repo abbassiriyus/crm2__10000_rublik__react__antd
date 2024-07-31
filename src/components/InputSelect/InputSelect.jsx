@@ -1,29 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Select } from 'antd'
 
 const InputSelect = ({
-                         save,
-                         dataIndex,
-                         record,
-                         rules,
-                         options,
-                         displayMode,
-                         isFormItem,
-                         allowClear,
-                         entityId = 'id',
-                         tableName,
-                         dbFieldName = dataIndex,
-                         ...restProps
-                     }) => {
-    const [ value, setValue ] = useState(record[dataIndex])
+    save,
+    dataIndex,
+    record = {},
+    rules = [],
+    options = [],
+    displayMode = false,
+    isFormItem = true,
+    allowClear = false,
+    entityId = 'id',
+    tableName,
+    dbFieldName = dataIndex,
+    ...restProps
+}) => {
+    const [value, setValue] = useState(record[dataIndex] || undefined)
+
+    useEffect(() => {
+        setValue(record[dataIndex] || undefined)
+    }, [record, dataIndex])
 
     function handleSave(val) {
-        save?.({
-            'id': record[entityId],
-            'tableName': tableName,
-            'dbFieldName': dbFieldName,
-            'value': val
-        })
+        if (save) {
+            save({
+                id: record[entityId],
+                tableName,
+                dbFieldName,
+                value: val
+            })
+        }
     }
 
     function handleChange(val) {
@@ -31,53 +37,31 @@ const InputSelect = ({
         handleSave(val || null)
     }
 
-    let preparedOptions
-    if (Array.isArray(options) && options.length > 0) {
-        preparedOptions = options.map(curr => ({
+    const preparedOptions = Array.isArray(options) && options.length > 0
+        ? options.map(curr => ({
             value: curr.id,
             label: curr.name
         }))
-    } else {
-        preparedOptions = {}
-    }
+        : []
 
-    const finalInput = isFormItem
-        ? (
-            <Form.Item
-                style={ { margin: 0 } }
-                rules={ rules }
-                name={ dataIndex }
-            >
-                <Select
-                    { ...restProps }
-                    defaultValue={ value }
-                    value={ value }
-                    onChange={ handleChange }
-                    style={ { width: '100%' } }
-                    allowClear={ allowClear }
-                    options={ preparedOptions }
-                />
-            </Form.Item>
-        ) : (
-            <Select
-                { ...restProps }
-                defaultValue={ value }
-                value={ value }
-                onChange={ handleChange }
-                style={ { width: '100%' } }
-                allowClear={ allowClear }
-                options={ preparedOptions }
-            />
-        )
-
-    return (
-        displayMode ? (
-            <>
-                { preparedOptions.length > 0 ? preparedOptions.find(opt => opt.value === record[dataIndex])?.label
-                    : finalInput }
-            </>
-        ) : finalInput
+    const finalInput = (
+        <Select
+            {...restProps}
+            defaultValue={value || undefined}
+            value={value || undefined}
+            onChange={handleChange}
+            style={{ width: '100%' }}
+            allowClear={allowClear}
+            options={preparedOptions}
+        />
     )
+
+    return displayMode ? (
+        <>{preparedOptions.length > 0
+            ? preparedOptions.find(opt => opt.value === record[dataIndex])?.label
+            : finalInput}
+        </>
+    ) : finalInput
 }
 
 export default InputSelect

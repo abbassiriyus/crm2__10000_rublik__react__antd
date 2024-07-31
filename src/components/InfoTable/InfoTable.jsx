@@ -10,6 +10,9 @@ import InfoRequestTT from "../InfoPage/InfoRequestTT.jsx";
 import Usloviya from "../InfoPage/Usloviya.jsx";
 import Comments from "../InfoPage/Comments.jsx";
 import ExtraProduct from "../InfoPage/ExtraProduct.jsx";
+import InputTextRowList from '../InputTextList/InputTextRowList.jsx'
+import InputTextRow from '../InputText/InputTextRow.jsx'
+import InputSelect from '../InputSelect/InputSelect.jsx'
 
 const InfoTable = ({
     path,
@@ -130,6 +133,12 @@ const InfoTable = ({
                             return 'Banks';
                         case 'AdditionalProducts':
                             return <ExtraProduct />
+                        case 'InputTextRowList':
+                            return <InputTextRowList />;
+                        case 'InputTextRow':
+                            return <InputTextRow />;
+                        case 'InputSelectRow':
+                            return <InputSelect />;
                         default:
                             return null;
                     }
